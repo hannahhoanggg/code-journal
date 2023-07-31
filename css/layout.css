@@ -8,6 +8,14 @@
   padding: 0 1.5rem;
 }
 
+.heading {
+  background-color: #562b81;
+}
+
+.second-heading {
+  background-color: #f0f0f0;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -31,4 +39,15 @@
   .column-half {
     width: 50%;
   }
+}
+
+h1 {
+  color: white;
+  font-weight: normal;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.top-header {
+  font-size: large;
 }
