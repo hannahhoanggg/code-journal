@@ -34,6 +34,8 @@ label {
 
 img {
   width: 100%;
+  height: 100%;
+  padding-right: 0.5rem;
 }
 
 input {
@@ -51,10 +53,9 @@ textarea {
 }
 
 .url-text,
-.url-box,
-.title-text,
-.title-box {
+.image-input,
+.title-box,
+.title-box-input {
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-left: 2px;
 }
