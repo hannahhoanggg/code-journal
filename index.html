@@ -26,22 +26,65 @@
       </div>
     </header>
 
-    <div class="second-heading">
-      <main class="container">
-        <div class="row">
-          <div class="column-full">
-            <div class="top-header">
-              <h2>New Entry</h2>
-            </div>
+    <main class="container">
+      <div class="row">
+        <div class="column-full">
+          <div class="top-header">
+            <h2>New Entry</h2>
           </div>
         </div>
-        <div data-view="entry-form">
-          <form class="form">
-            <div class="row"></div>
-          </form>
-        </div>
-      </main>
-    </div>
+      </div>
+      <div data-view="entry-form">
+        <form class="form">
+          <div class="row">
+            <div class="column-half">
+              <img
+                src="images/placeholder-image-square.jpg"
+                alt="placeholder img" />
+            </div>
+            <div class="column-half">
+              <div class="title-text">
+                <label for="title">Title</label>
+              </div>
+              <div class="title-box">
+                <input
+                  required
+                  name="title"
+                  type="text"
+                  class="title-box"
+                  id="title" />
+              </div>
+              <div class="url-text">
+                <label for="url">Photo URL</label>
+              </div>
+              <div class="url-box">
+                <input
+                  required
+                  name="url"
+                  type="url"
+                  class="url-box"
+                  id="url" />
+              </div>
+            </div>
+            <div class="column-full">
+              <div class="notes-text">
+                <label for="notes">Notes</label>
+              </div>
+              <div class="notes-box">
+                <textarea
+                  name="notes-text"
+                  id="notes-text"
+                  rows="6"
+                  cols="10"></textarea>
+              </div>
+            </div>
+            <div class="save-button">
+              <button>SAVE</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
     <div data-view="entries" class="hidden"></div>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>

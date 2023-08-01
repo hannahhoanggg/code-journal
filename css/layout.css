@@ -8,14 +8,6 @@
   padding: 0 1.5rem;
 }
 
-.heading {
-  background-color: #562b81;
-}
-
-.second-heading {
-  background-color: #f0f0f0;
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +16,12 @@
 .column-full,
 .column-half {
   width: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+  .column-half {
+    flex-basis: 50%;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -39,15 +37,4 @@
   .column-half {
     width: 50%;
   }
-}
-
-h1 {
-  color: white;
-  font-weight: normal;
-  font-size: 20px;
-  padding: 10px;
-}
-
-.top-header {
-  font-size: large;
 }
