@@ -1,8 +1,8 @@
-const $titleBoxInput = document.querySelector('.title-text');
-const $imageInput = document.querySelector('.image-text');
-const $notesInput = document.querySelector('.notes-text');
+const $titleBoxInput = document.querySelector('#title-text');
+const $imageInput = document.querySelector('#image-text');
+const $notesText = document.querySelector('#notes-text');
 const $image = document.querySelector('img');
-const $form = document.querySelector('.form');
+const $form = document.querySelector('form');
 
 $imageInput.addEventListener('input', updateImage);
 
@@ -18,7 +18,7 @@ function submitForm(event) {
   const formValues = {
     imageUrl: $imageInput.value,
     title: $titleBoxInput.value,
-    notes: $notesInput.value,
+    notes: $notesText.value,
     entryId: data.nextEntryId,
   };
 
