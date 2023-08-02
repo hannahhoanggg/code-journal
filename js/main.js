@@ -5,6 +5,8 @@ const $image = document.querySelector('img');
 const $form = document.querySelector('form');
 const $ul = document.querySelector('ul');
 const $noEntries = document.querySelector('.no-entries');
+const $entries = document.querySelector('.entries');
+const $entryForm = document.querySelector('entry-form');
 
 $imageInput.addEventListener('input', updateImage);
 
@@ -80,3 +82,17 @@ function toggleNoEntries() {
 }
 
 toggleNoEntries();
+
+function viewSwap(viewName) {
+  if (viewName === 'entry-form') {
+    $entries.className = 'entries hidden';
+    $entryForm.className = 'entry-form';
+    data.view = 'entry-form';
+  } else {
+    $entries.className = 'entries';
+    $entryForm.className = 'entry-form hidden';
+    data.view = 'entries';
+  }
+}
+
+viewSwap();
