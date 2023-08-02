@@ -7,6 +7,7 @@ const $ul = document.querySelector('ul');
 const $noEntries = document.querySelector('.no-entries');
 const $entries = document.querySelector('.entries');
 const $entryForm = document.querySelector('entry-form');
+const $entriesAnchor = document.querySelector('#entries-anchor');
 
 $imageInput.addEventListener('input', updateImage);
 
@@ -95,4 +96,7 @@ function viewSwap(viewName) {
   }
 }
 
-viewSwap();
+$entriesAnchor.addEventListener('click', function () {
+  const $dataView = event.target.getAttribute('data-view');
+  viewSwap($dataView);
+});
