@@ -3,6 +3,7 @@ const $imageInput = document.querySelector('#image-text');
 const $notesText = document.querySelector('#notes-text');
 const $image = document.querySelector('img');
 const $form = document.querySelector('form');
+const $ul = document.querySelector('ul');
 
 $imageInput.addEventListener('input', updateImage);
 
@@ -49,7 +50,7 @@ function renderEntry(entry) {
 
   const $h2 = document.createElement('h2');
   $h2.textContent = entry.title;
-  $columnHalf.append($h2);
+  $columnHalf.appendChild($h2);
 
   const $p = document.createElement('p');
   $p.textContent = entry.notes;
@@ -59,3 +60,12 @@ function renderEntry(entry) {
 }
 
 renderEntry();
+
+function renderAllEntries(entry) {
+  for (let i = 0; i < data.entries.length; i++) {
+    const entry = renderEntry(data.entries[i]);
+    $ul.appendChild(entry);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', renderAllEntries);
