@@ -16,11 +16,74 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header>
-      <div class="container"></div>
+    <header class="heading">
+      <div class="container">
+        <div class="row">
+          <div class="column-full">
+            <h1>Code Journal</h1>
+          </div>
+        </div>
+      </div>
     </header>
+
     <main class="container">
-      <div data-view="entry-form"></div>
+      <div class="row">
+        <div class="column-full">
+          <div class="top-header">
+            <h2>New Entry</h2>
+          </div>
+        </div>
+      </div>
+      <div data-view="entry-form">
+        <form class="form">
+          <div class="row">
+            <div class="column-half">
+              <img
+                src="images/placeholder-image-square.jpg"
+                alt="placeholder img" />
+            </div>
+            <div class="column-half">
+              <div class="title-box">
+                <label for="title-text">Title</label>
+              </div>
+              <div class="title-box-input">
+                <input
+                  required
+                  name="title"
+                  type="text"
+                  class="title"
+                  id="title-text" />
+              </div>
+              <div class="image-text">
+                <label for="image-text">Photo URL</label>
+              </div>
+              <div class="image-input">
+                <input
+                  required
+                  name="image"
+                  type="url"
+                  class="image"
+                  id="image-text" />
+              </div>
+            </div>
+            <div class="column-full">
+              <div class="title-notes">
+                <label for="notes-text">Notes</label>
+              </div>
+              <div class="notes-input">
+                <textarea
+                  name="notes"
+                  id="notes-text"
+                  rows="6"
+                  cols="10"></textarea>
+              </div>
+            </div>
+            <div class="column-full save-button">
+              <button>SAVE</button>
+            </div>
+          </div>
+        </form>
+      </div>
       <div data-view="entries" class="hidden"></div>
     </main>
     <script src="js/data.js"></script>
