@@ -4,6 +4,7 @@ const $notesText = document.querySelector('#notes-text');
 const $image = document.querySelector('img');
 const $form = document.querySelector('form');
 const $ul = document.querySelector('ul');
+const $noEntries = document.querySelector('.no-entries');
 
 $imageInput.addEventListener('input', updateImage);
 
@@ -69,3 +70,13 @@ function renderAllEntries(entry) {
 }
 
 document.addEventListener('DOMContentLoaded', renderAllEntries);
+
+function toggleNoEntries() {
+  if (data.entries.length > 0) {
+    $noEntries.className = 'hidden';
+  } else {
+    $noEntries.className = 'no-entries';
+  }
+}
+
+toggleNoEntries();
