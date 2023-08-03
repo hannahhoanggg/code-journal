@@ -50,6 +50,7 @@ function renderEntry(entry) {
 
   const $imageSrc = document.createElement('img');
   $imageSrc.setAttribute('src', entry.photoUrl);
+  $imageSrc.setAttribute('alt', entry.title);
   $imageColumn.appendChild($imageSrc);
 
   const $columnHalf = document.createElement('div');
