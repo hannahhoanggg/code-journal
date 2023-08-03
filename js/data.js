@@ -7,7 +7,7 @@ let data = {
   nextEntryId: 1,
 };
 
-const previousDataJSON = localStorage.getItem('code-journal-entry-form');
+const previousDataJSON = localStorage.getItem('javascript-local-storage');
 
 if (previousDataJSON !== null) {
   data = JSON.parse(previousDataJSON);
@@ -15,7 +15,7 @@ if (previousDataJSON !== null) {
 
 function beforeUnload(event) {
   const dataJSON = JSON.stringify(data);
-  localStorage.setItem('code-journal-entry-form', dataJSON);
+  localStorage.setItem('javascript-local-storage', dataJSON);
 }
 
 window.addEventListener('beforeunload', beforeUnload);
