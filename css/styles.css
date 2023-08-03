@@ -15,6 +15,11 @@ body {
   font-size: 15px;
 }
 
+.nav-bar-title {
+  display: flex;
+  margin-left: 30px;
+}
+
 button,
 .new-button {
   background-color: #562b81;
@@ -70,10 +75,6 @@ li {
   display: flex;
   align-items: center;
   font-size: 15px;
-}
-
-.entries {
-  margin-left: 15px;
 }
 
 .new-header {

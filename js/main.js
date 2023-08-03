@@ -6,14 +6,14 @@ const $form = document.querySelector('form');
 const $ul = document.querySelector('ul');
 const $noEntries = document.querySelector('.no-entries');
 const $entries = document.querySelector('.entries');
-const $entryForm = document.querySelector('entry-form');
+const $entryForm = document.querySelector('.entry-form');
 const $entriesAnchor = document.querySelector('#entries-anchor');
 const $entryFormAnchor = document.querySelector('#entry-form-anchor');
 
 $imageInput.addEventListener('input', updateImage);
 
 function updateImage(event) {
-  const photoURL = $imageInput.value;
+  const photoURL = event.target.value;
   $image.setAttribute('src', photoURL);
 }
 
@@ -22,7 +22,7 @@ $form.addEventListener('submit', submitForm);
 function submitForm(event) {
   event.preventDefault();
   const formValues = {
-    imageUrl: $imageInput.value,
+    photoUrl: $imageInput.value,
     title: $titleBoxInput.value,
     notes: $notesText.value,
     entryId: data.nextEntryId,
@@ -49,7 +49,7 @@ function renderEntry(entry) {
   $row.appendChild($imageColumn);
 
   const $imageSrc = document.createElement('img');
-  $imageSrc.setAttribute('src', entry.imageURL);
+  $imageSrc.setAttribute('src', entry.photoUrl);
   $imageColumn.appendChild($imageSrc);
 
   const $columnHalf = document.createElement('div');

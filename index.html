@@ -22,7 +22,7 @@
           <div class="column-full">
             <nav class="nav-bar">
               <h1>Code Journal</h1>
-              <a id="entries-anchor" class="entries" data-view="entries"
+              <a id="entries-anchor" data-view="entries" class="nav-bar-title"
                 ><h4>Entries</h4></a
               >
             </nav>
@@ -32,15 +32,16 @@
     </header>
 
     <main class="container">
-      <div data-view="entry-form" class="view">
-        <div class="row">
-          <div class="column-full">
-            <div class="top-header">
-              <h2>New Entry</h2>
+      <div data-view="entry-form" class="entry-form">
+        <form class="form">
+          <div class="row">
+            <div class="column-full">
+              <div class="top-header">
+                <h2>New Entry</h2>
+              </div>
             </div>
           </div>
-        </div>
-        <form class="form" data-view="entries">
+
           <div class="row">
             <div class="column-half">
               <img
@@ -71,6 +72,9 @@
                   id="image-text" />
               </div>
             </div>
+          </div>
+
+          <div class="row">
             <div class="column-full">
               <div class="title-notes">
                 <label for="notes-text">Notes</label>
@@ -89,7 +93,8 @@
           </div>
         </form>
       </div>
-      <div data-view="entries" class="hidden">
+
+      <div data-view="entries" class="entries hidden">
         <div class="row">
           <div class="column-full">
             <div class="new-header">
