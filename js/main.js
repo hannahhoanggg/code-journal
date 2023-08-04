@@ -39,6 +39,7 @@ function submitForm(event) {
 
 function renderEntry(entry) {
   const $li = document.createElement('li');
+  $li.setAttribute('data-entry-id', entry.entryId);
 
   const $row = document.createElement('div');
   $row.setAttribute('class', 'row');
@@ -57,9 +58,17 @@ function renderEntry(entry) {
   $columnHalf.setAttribute('class', 'column-half');
   $row.appendChild($columnHalf);
 
+  const $columnPusheen = document.createElement('div');
+  $columnPusheen.setAttribute('class', 'pusheen');
+  $columnHalf.appendChild($columnPusheen);
+
   const $h2 = document.createElement('h2');
   $h2.textContent = entry.title;
-  $columnHalf.appendChild($h2);
+  $columnPusheen.appendChild($h2);
+
+  const $iPencil = document.createElement('i');
+  $iPencil.setAttribute('class', 'fa-solid fa-pencil');
+  $columnPusheen.appendChild($iPencil);
 
   const $p = document.createElement('p');
   $p.textContent = entry.notes;
@@ -103,5 +112,9 @@ $entriesAnchor.addEventListener('click', function () {
 });
 
 $entryFormAnchor.addEventListener('click', function () {
+  viewSwap('entry-form');
+});
+
+$ul.addEventListener('click', function () {
   viewSwap('entry-form');
 });

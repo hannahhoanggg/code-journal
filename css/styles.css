@@ -87,3 +87,19 @@ ul {
 .no-entries {
   text-align: center;
 }
+
+.pusheen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  width: 95%;
+}
+
+.fa-pencil {
+  width: 5%;
+  color: #562b81;
+}
