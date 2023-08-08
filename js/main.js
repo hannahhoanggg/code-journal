@@ -132,7 +132,9 @@ function entryFormViewSwap() {
   viewSwap('entry-form');
 }
 
-$entriesAnchor.addEventListener('click', viewSwap('entries'));
+$entriesAnchor.addEventListener('click', function () {
+  viewSwap('entries');
+});
 $entryFormAnchor.addEventListener('click', entryFormViewSwap);
 $ul.addEventListener('click', clickPencil);
 
