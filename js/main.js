@@ -42,12 +42,14 @@ function submitForm(event) {
         data.entries[i] = formValues;
       }
     }
-
+    const $oldLi = document.querySelector(
+      `li[data-entry-id="${formValues.entryId}"]`
+    );
+    const $newLi = renderEntry(formValues);
+    $oldLi.replaceWith($newLi);
     $h2.textContent = 'New Entry';
     data.editing = null;
-    renderAllEntries();
   }
-
   $form.reset();
   viewSwap('entries');
 }
@@ -92,17 +94,7 @@ function renderEntry(entry) {
   return $li;
 }
 
-function clearAllEntries() {
-  const elements = $ul.getElementsByTagName('li');
-
-  while (elements.length > 0) {
-    $ul.removeChild(elements[0]);
-  }
-}
-
 function renderAllEntries() {
-  clearAllEntries();
-
   for (let i = 0; i < data.entries.length; i++) {
     $ul.appendChild(renderEntry(data.entries[i]));
   }
@@ -131,10 +123,6 @@ function viewSwap(viewName) {
   data.view = viewName;
 }
 
-function entryViewSwap() {
-  viewSwap('entries');
-}
-
 function entryFormViewSwap() {
   $imageInput.setAttribute('value', '');
   $titleBoxInput.setAttribute('value', '');
@@ -144,7 +132,7 @@ function entryFormViewSwap() {
   viewSwap('entry-form');
 }
 
-$entriesAnchor.addEventListener('click', entryViewSwap);
+$entriesAnchor.addEventListener('click', viewSwap('entries'));
 $entryFormAnchor.addEventListener('click', entryFormViewSwap);
 $ul.addEventListener('click', clickPencil);
 
@@ -160,9 +148,9 @@ function clickPencil(event) {
         $titleBoxInput.setAttribute('value', data.editing.title);
         $image.setAttribute('src', data.editing.photoUrl);
         $notesText.textContent = data.editing.notes;
+        $h2.textContent = 'Edit Entry';
         viewSwap('entry-form');
       }
     }
   }
-  $h2.textContent = 'Edit Entry';
 }
