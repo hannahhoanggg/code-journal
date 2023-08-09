@@ -30,6 +30,7 @@ button,
   font-size: 0.75rem;
   padding: 0.35rem 0.75rem;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .button-row {
@@ -111,9 +112,9 @@ h2 {
   font-weight: bold;
 }
 
-/* .visibility-hidden {
+.visibility-hidden {
   visibility: hidden;
-} */
+}
 
 h3 {
   font-weight: bold;
