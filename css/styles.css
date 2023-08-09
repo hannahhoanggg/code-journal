@@ -29,12 +29,13 @@ button,
   height: 30px;
   font-size: 0.75rem;
   padding: 0.35rem 0.75rem;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
-.save-button {
-  display: flex;
-  justify-content: right;
+.button-row {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 label {
@@ -102,4 +103,18 @@ h2 {
 .fa-pencil {
   width: 5%;
   color: #562b81;
+}
+
+.delete-entry {
+  color: #dc2626;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* .visibility-hidden {
+  visibility: hidden;
+} */
+
+h3 {
+  font-weight: bold;
 }
