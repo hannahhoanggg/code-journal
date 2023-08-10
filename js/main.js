@@ -12,6 +12,8 @@ const $entriesAnchor = document.querySelector('#entries-anchor');
 const $entryFormAnchor = document.querySelector('#entry-form-anchor');
 const $deleteEntry = document.querySelector('.delete-entry');
 const $modalContainer = document.querySelector('.modal-container');
+const $cancelButton = document.querySelector('.button-cancel');
+// const $confirmButton = document.querySelector(".button-confirm");
 
 $imageInput.addEventListener('input', updateImage);
 
@@ -164,4 +166,10 @@ $deleteEntry.addEventListener('click', deleteEntry);
 
 function deleteEntry(event) {
   $modalContainer.className = 'modal-container';
+}
+
+$cancelButton.addEventListener('click', cancelButton);
+
+function cancelButton(event) {
+  $modalContainer.className = 'modal-container hidden';
 }
