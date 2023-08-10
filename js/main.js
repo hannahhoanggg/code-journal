@@ -10,6 +10,8 @@ const $entries = document.querySelector('.entries');
 const $entryForm = document.querySelector('.entry-form');
 const $entriesAnchor = document.querySelector('#entries-anchor');
 const $entryFormAnchor = document.querySelector('#entry-form-anchor');
+const $deleteEntry = document.querySelector('.delete-entry');
+const $modalContainer = document.querySelector('.modal-container');
 
 $imageInput.addEventListener('input', updateImage);
 
@@ -150,9 +152,16 @@ function clickPencil(event) {
         $titleBoxInput.setAttribute('value', data.editing.title);
         $image.setAttribute('src', data.editing.photoUrl);
         $notesText.textContent = data.editing.notes;
+        $deleteEntry.className = 'delete-entry';
         $h2.textContent = 'Edit Entry';
         viewSwap('entry-form');
       }
     }
   }
+}
+
+$deleteEntry.addEventListener('click', deleteEntry);
+
+function deleteEntry(event) {
+  $modalContainer.className = 'modal-container';
 }
