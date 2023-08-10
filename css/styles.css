@@ -110,6 +110,7 @@ h2 {
   color: #dc2626;
   font-size: 15px;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .visibility-hidden {

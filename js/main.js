@@ -13,7 +13,7 @@ const $entryFormAnchor = document.querySelector('#entry-form-anchor');
 const $deleteEntry = document.querySelector('.delete-entry');
 const $modalContainer = document.querySelector('.modal-container');
 const $cancelButton = document.querySelector('.button-cancel');
-// const $confirmButton = document.querySelector(".button-confirm");
+const $confirmButton = document.querySelector('.button-confirm');
 
 $imageInput.addEventListener('input', updateImage);
 
@@ -133,6 +133,8 @@ function entryFormViewSwap() {
   $image.setAttribute('src', '');
   $notesText.textContent = null;
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $deleteEntry.setAttribute('class', 'delete-entry visibility-hidden');
+  $h2.textContent = 'New Entry';
   viewSwap('entry-form');
 }
 
@@ -163,13 +165,27 @@ function clickPencil(event) {
 }
 
 $deleteEntry.addEventListener('click', deleteEntry);
-
 function deleteEntry(event) {
   $modalContainer.className = 'modal-container';
 }
 
 $cancelButton.addEventListener('click', cancelButton);
-
 function cancelButton(event) {
   $modalContainer.className = 'modal-container hidden';
+}
+
+$confirmButton.addEventListener('click', confirmButton);
+function confirmButton(event) {
+  const entryId = data.editing.entryId;
+  for (let i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === entryId) {
+      data.entries.splice(i, 1);
+      $ul.children[i].remove();
+    }
+  }
+
+  toggleNoEntries();
+  cancelButton();
+  data.editing = null;
+  viewSwap('entries');
 }
