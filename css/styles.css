@@ -29,12 +29,14 @@ button,
   height: 30px;
   font-size: 0.75rem;
   padding: 0.35rem 0.75rem;
-  margin-top: 10px;
+  margin-top: 5px;
+  cursor: pointer;
 }
 
-.save-button {
-  display: flex;
-  justify-content: right;
+.button-row {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 label {
@@ -102,4 +104,48 @@ h2 {
 .fa-pencil {
   width: 5%;
   color: #562b81;
+}
+
+.delete-entry {
+  color: #dc2626;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.button-cancel {
+  background-color: #b6b6b6;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.button-confirm {
+  background-color: #dc2626;
+  border-radius: 5px;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.55);
+  font-size: 15px;
+  position: fixed;
+  inset: 0;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 40px;
 }

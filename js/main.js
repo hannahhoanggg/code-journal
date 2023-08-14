@@ -10,6 +10,10 @@ const $entries = document.querySelector('.entries');
 const $entryForm = document.querySelector('.entry-form');
 const $entriesAnchor = document.querySelector('#entries-anchor');
 const $entryFormAnchor = document.querySelector('#entry-form-anchor');
+const $deleteEntry = document.querySelector('.delete-entry');
+const $modalContainer = document.querySelector('.modal-container');
+const $cancelButton = document.querySelector('.button-cancel');
+const $confirmButton = document.querySelector('.button-confirm');
 
 $imageInput.addEventListener('input', updateImage);
 
@@ -129,6 +133,8 @@ function entryFormViewSwap() {
   $image.setAttribute('src', '');
   $notesText.textContent = null;
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $deleteEntry.setAttribute('class', 'delete-entry visibility-hidden');
+  $h2.textContent = 'New Entry';
   viewSwap('entry-form');
 }
 
@@ -150,9 +156,36 @@ function clickPencil(event) {
         $titleBoxInput.setAttribute('value', data.editing.title);
         $image.setAttribute('src', data.editing.photoUrl);
         $notesText.textContent = data.editing.notes;
+        $deleteEntry.className = 'delete-entry';
         $h2.textContent = 'Edit Entry';
         viewSwap('entry-form');
       }
     }
   }
+}
+
+$deleteEntry.addEventListener('click', deleteEntry);
+function deleteEntry(event) {
+  $modalContainer.className = 'modal-container';
+}
+
+$cancelButton.addEventListener('click', cancelButton);
+function cancelButton(event) {
+  $modalContainer.className = 'modal-container hidden';
+}
+
+$confirmButton.addEventListener('click', confirmButton);
+function confirmButton(event) {
+  const entryId = data.editing.entryId;
+  for (let i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === entryId) {
+      data.entries.splice(i, 1);
+      $ul.children[i].remove();
+    }
+  }
+
+  toggleNoEntries();
+  cancelButton();
+  data.editing = null;
+  viewSwap('entries');
 }

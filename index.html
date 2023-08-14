@@ -73,7 +73,6 @@
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="column-full">
               <div class="title-notes">
@@ -87,11 +86,23 @@
                   cols="10"></textarea>
               </div>
             </div>
-            <div class="column-full save-button">
-              <button>SAVE</button>
+            <div class="column-full">
+              <div class="row button-row">
+                <a class="delete-entry visibility-hidden">Delete Entry</a>
+                <button>SAVE</button>
+              </div>
             </div>
           </div>
         </form>
+        <div class="modal-container hidden">
+          <div class="modal-content">
+            <h3>Are you sure you want to delete this entry?</h3>
+            <div class="row button-row">
+              <button class="button-cancel">CANCEL</button>
+              <button class="button-confirm">CONFIRM</button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div data-view="entries" class="entries hidden">
@@ -112,11 +123,7 @@
           <div class="column-full">
             <p class="no-entries">No entries have been recorded.</p>
           </div>
-        </div>
-        <div class="row">
-          <div class="column-full">
-            <ul class="entry-list"></ul>
-          </div>
+          <ul class="entry-list" />
         </div>
       </div>
     </main>
